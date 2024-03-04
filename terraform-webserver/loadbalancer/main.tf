@@ -39,7 +39,7 @@ resource "aws_lb" "webserver-alb" {
 ## target groups creation
 resource "aws_lb_target_group" "webserver-tg" {
   name        = "${var.app_arguments["common_name"]}-tg"
-  port        = 80
+  port        = 8080
   protocol    = "HTTP"
   target_type = "instance"
   vpc_id      = var.vpcid

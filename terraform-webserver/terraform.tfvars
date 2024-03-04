@@ -9,8 +9,8 @@ app_arguments = {
   }
 
   autoscaling_arguments = {
-    ami_id = "ami-05a5bb48beb785bf1"
-    #    ec2_key_pair   = "myweb"
+    ami_id         = "ami-05a5bb48beb785bf1"
+    ec2_key_pair   = "webapp"
     instance_type  = "t2.micro"
     instance_count = 1
   }

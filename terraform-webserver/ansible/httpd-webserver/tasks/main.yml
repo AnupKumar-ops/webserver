@@ -1,0 +1,14 @@
+---
+# tasks file for httpd-webserver
+- name: Install Apache Webserver
+  dnf: pkg=httpd state=latest
+
+- name: update httpd conf file
+  template: src=httpd.conf.j2 dest=/etc/httpd/conf/httpd.conf
+
+- name: Place the index file at project root
+  copy: src=index.html dest={{ project_root }}/index.html 
+
+- name: Enable Apache on system reboot
+  service: name=httpd enabled=yes
+  notify: restart apache

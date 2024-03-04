@@ -1,0 +1,4 @@
+---
+# vars file for httpd-webserver
+project_root: /var/www/html
+listening_port: 8080
