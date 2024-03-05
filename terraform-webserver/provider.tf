@@ -6,6 +6,14 @@ terraform {
       version = ">= 3.56"
     }
   }
+  backend "s3" {
+    bucket         = "anup-terraform-s3-bucket"
+    region         = "ap-south-1"
+    key            = "mystate/terraform.tfstate"
+    dynamodb_table = "terraform-lock-table"
+    encrypt        = true
+  }
+
 }
 
 provider "aws" {
